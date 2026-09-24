@@ -1,35 +1,35 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import './NavBar.css'
 
-export default function Navbar(){
-const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        
+
         {/* LOGO */}
-        <a href="#" className="navbar-brand">
-          <img src="/img/logo_sumaq.png" alt="" />
-        </a>
+        <Link to="/" className="navbar-brand">
+          <img src="/img/logo_sumaq.png" alt="Sumaq Logo" />
+        </Link>
 
         {/* NAVEGACIÓN DESKTOP */}
         <div className="nav-links">
-          <a href="/servicios" className="nav-link">Servicios</a>
-          <a href="/talento" className="nav-link">Para talento</a>
-          <a href="/nosotros" className="nav-link">Nosotros</a>
-          <a href="/contacto" className="nav-link">Contacto</a>
+          <NavLink to="/servicios" className="nav-link">Servicios</NavLink>
+          <NavLink to="/talento" className="nav-link">Para talento</NavLink>
+          <NavLink to="/nosotros" className="nav-link">Nosotros</NavLink>
+          <NavLink to="/contacto" className="nav-link">Contacto</NavLink>
         </div>
 
         {/* BOTONES DE ACCIÓN DESKTOP */}
         <div className="nav-actions">
-          <a href="#apply-talent" className="btn-secondary">Postular como Talento</a>
-          <a href="#contact" className="btn-primary">Contratar Talento</a>
+          <NavLink to="/postular" className="btn-secondary">Postular como Talento</NavLink>
+          <NavLink to="/contratar" className="btn-primary">Contratar Talento</NavLink>
         </div>
 
         {/* BOTÓN MÓVIL */}
-        <button 
+        <button
           className="mobile-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Abrir Menú"

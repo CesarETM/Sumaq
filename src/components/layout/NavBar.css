@@ -70,14 +70,25 @@ a img {
 
 .nav-link {
   text-decoration: none;
+  color: black;
   font-size: 0.875rem;
   font-weight: 500;
   transition: color 0.2s ease;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  /* Reservamos espacio para la línea inferior sin que empuje el texto */
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
 }
 
 .nav-link:hover {
-  color: #38bdf8;
+  color: #f33f12;
+}
+
+/* Estilo cuando la ruta coincide (Sugerencia: agregar !important si otro CSS lo invalida) */
+.nav-link.active {
+  font-weight: 500 !important;
+  border-bottom: 3px solid #c51e1ed0 !important;
 }
 
 /* BOTONES DE ACCIÓN (CTAs) */
@@ -86,6 +97,9 @@ a img {
   align-items: center;
   gap: 1rem;
 }
+
+
+
 
 .btn-secondary {
   color: #71100b;
